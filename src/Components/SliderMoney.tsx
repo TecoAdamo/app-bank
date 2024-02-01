@@ -1,9 +1,14 @@
 import { Slider } from "native-base";
-import { useState } from "react";
+
 import { StyleSheet, View, Text } from 'react-native';
 
-export default function SliderMoney() {
-    const [balance, setBalance] = useState<number>(0)
+interface SliderMoneyProps {
+    balance: number
+    onSliderChange: (value: number) => void
+}
+
+const SliderMoney: React.FunctionComponent<SliderMoneyProps> = ({ balance, onSliderChange }) => {
+    const isZeroBalance = balance === 0;
 
     return (
         <View style={styles.sliderContainer}>
@@ -13,20 +18,20 @@ export default function SliderMoney() {
                 step={10}
                 maxW={300}
                 minValue={0}
-                maxValue={500}
-                defaultValue={70}
+                maxValue={400}
+                defaultValue={isZeroBalance ? 0.1 : balance}
                 colorScheme="violet"
-                onChange={(valor) => setBalance(valor)}
+                onChange={(valor) => onSliderChange(valor)}
             >
                 <Slider.Track>
                     <Slider.FilledTrack />
                 </Slider.Track>
                 <Slider.Thumb />
-
             </Slider>
         </View>
     );
 }
+
 
 const styles = StyleSheet.create({
     sliderContainer: {
@@ -35,3 +40,5 @@ const styles = StyleSheet.create({
 
     },
 });
+
+export default SliderMoney;
