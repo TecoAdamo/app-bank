@@ -3,9 +3,11 @@ import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { TextInput } from 'react-native-paper';
+
 import PickerSexuality from '../Components/PickerSexuality';
 import SliderMoney from '../Components/SliderMoney';
 import { NativeBaseProvider } from 'native-base';
+import StudentySwitch from '../Components/StudentySwitch';
 
 export default function Home() {
 
@@ -30,6 +32,7 @@ export default function Home() {
                         />
                         <PickerSexuality />
                         <SliderMoney />
+                        <StudentySwitch />
                     </View>
                 </View>
 
