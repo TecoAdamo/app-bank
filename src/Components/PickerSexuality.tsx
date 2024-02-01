@@ -17,8 +17,9 @@ const PickerSexuality: React.FunctionComponent<PickerSexualityProps> = ({ sex, s
                 selectedValue={sex}
                 onValueChange={(value) => setSex(value)}
             >
-                <Picker.Item key={1} label="Masculino" value={1} />
-                <Picker.Item key={2} label="Feminino" value={2} />
+                <Picker.Item key={0} label="Masculino" value={0} />
+                <Picker.Item key={1} label="Feminino" value={1} />
+                <Picker.Item key={2} label="Prefiro não responder" value={2} />
             </Picker>
         </View>
     );

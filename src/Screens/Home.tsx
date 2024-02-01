@@ -10,7 +10,7 @@ import { NativeBaseProvider } from 'native-base';
 export default function Home() {
     const [name, setName] = useState('');
     const [age, setAge] = useState('');
-    const [sex, setSex] = useState<number | null>(1)
+    const [sex, setSex] = useState<number | null>(0)
     const [balance, setBalance] = useState(0);
     const [isStudent, setIsStudent] = useState(false);
 
@@ -27,13 +27,15 @@ export default function Home() {
         if (name === '' || age === '') {
             Alert.alert('Preencha os campos!')
         } else {
-            const infoString = `Nome: ${name}\nIdade: ${age}\nSexo: ${sex === 1 ? 'Masculino' : 'Feminino'}\nEstudante: ${isStudent ? 'Sim' : 'Não'}\nValor do Slider: R$ ${balance.toFixed(2)}`;
+            const sexOptions = ['Masculino', 'Feminino', 'Prefiro não responder'];
+            const infoString = `Nome: ${name}\nIdade: ${age}\nSexo: ${sexOptions[sex || 0]}\nEstudante: ${isStudent ? 'Sim' : 'Não'}\nValor do Slider: R$ ${balance.toFixed(2)}`;
 
             Alert.alert('Conta criada:', infoString);
 
             setName('')
             setAge('')
             setBalance(0)
+            setSex(0)
             if (isStudent === true) {
                 setIsStudent(false)
             }
