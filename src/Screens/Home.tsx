@@ -3,11 +3,13 @@ import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { TextInput } from 'react-native-paper';
+import PickerSexuality from '../Components/PickerSexuality';
 
 export default function Home() {
 
     return (
         <View style={styles.container}>
+
 
             <View style={styles.boxInput}>
                 <View>
@@ -22,8 +24,8 @@ export default function Home() {
                         label="Insira sua idade:"
                         keyboardType='numeric'
                     />
+                    <PickerSexuality />
                 </View>
-
             </View>
 
         </View>
@@ -39,6 +41,7 @@ const styles = StyleSheet.create({
         width: '90%',
         height: '100%',
         bottom: '26%',
+
     },
     boxInputAge: {
         marginTop: '4%'
