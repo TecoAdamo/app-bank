@@ -11,7 +11,7 @@ export default function StudentySwitch() {
             <Text>Você é estudante? </Text>
 
             <Switch
-                offTrackColor="violet.600"
+                offTrackColor="violet.300"
                 onTrackColor="violet.300"
 
                 onThumbColor="violet.600"
@@ -24,7 +24,10 @@ export default function StudentySwitch() {
 const styles = StyleSheet.create({
     switchContainer: {
         alignItems: 'center',
-        top: '52%'
+        justifyContent: 'center',
+        top: '38%',
+        flexDirection: 'row',
+        gap: 50
 
     },
 });
